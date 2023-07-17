@@ -35,8 +35,10 @@ function App() {
     if (winner) {
       if (winner === "X") {
         setScores({ ...scores, xScore: scores.xScore + 1 });
+        alert("X is the winner!");
       } else {
         setScores({ ...scores, oScore: scores.oScore + 1 });
+        alert("O is the winner!");
       }
     }
 
