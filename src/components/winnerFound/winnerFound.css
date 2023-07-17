@@ -9,3 +9,15 @@
   border-radius: 0.5rem;
   font-weight: bold;
 }
+
+.x-winner {
+  color: rgb(255, 70, 37);
+  border-bottom: 5px solid rgb(255, 70, 37);
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.o-winner {
+  color: rgb(44, 135, 255);
+  border-bottom: 5px solid rgb(44, 135, 255);
+  border-radius: 0 0.5rem 0.5rem 0;
+}
