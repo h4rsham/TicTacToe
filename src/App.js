@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import './App.css';
 import { Board } from './components/board';
+import { ScoreBoard } from './components/scoreBoard';
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
 
   const [board, setBoard] = useState(Array(9).fill(null));
   const [xPlayer, setXPlayer] = useState(true);
+  const [scores, setScores] = useState({xScore: 0, oScore: 0});
 
   const handleBoxClick = (boxIndex) => {
     const updatedBoard = board.map((value, index) => {
@@ -29,7 +31,17 @@ function App() {
       }
     });
 
-    checkForWinner(updatedBoard);
+    const winner = checkForWinner(updatedBoard);
+    if (winner) {
+      if (winner === 'X') {
+        setScores({...scores, xScore: scores.xScore + 1});
+      } else {
+        setScores({...scores, oScore: scores.oScore + 1});
+      }
+    }
+
+    // console.log(scores)
+
     setBoard(updatedBoard);
 
     setXPlayer(!xPlayer);
@@ -49,6 +61,7 @@ function App() {
 
   return (
     <div>
+      <ScoreBoard scores={scores}/>
       <Board board={board} onClick={handleBoxClick}/>
     </div>
   );
