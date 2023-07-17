@@ -1,5 +1,5 @@
 import React from "react";
-import { Box } from "./box";
+import { Box } from "../box/box";
 import "./board.css";
 
 export const Board = ({ board, onClick }) => {

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
 import "./App.css";
-import { Board } from "./components/board";
-import { ScoreBoard } from "./components/scoreBoard";
-import { ResetButton } from "./components/resetButton";
+import { Board } from "./components/board/board";
+import { ScoreBoard } from "./components/scoreBoard/scoreBoard";
+import { ResetButton } from "./components/resetButton/resetButton";
 
 function App() {
   const winConditions = [
