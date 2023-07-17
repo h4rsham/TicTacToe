@@ -61,7 +61,7 @@ function App() {
 
   return (
     <div>
-      <ScoreBoard scores={scores}/>
+      <ScoreBoard scores={scores} xPlayer={xPlayer}/>
       <Board board={board} onClick={handleBoxClick}/>
     </div>
   );
