@@ -4,6 +4,7 @@ import "./App.css";
 import { Board } from "./components/board/board";
 import { ScoreBoard } from "./components/scoreBoard/scoreBoard";
 import { ResetButton } from "./components/resetButton/resetButton";
+import { WinnerFoundText } from "./components/winnerFound/winnerFound";
 
 function App() {
   const winConditions = [
@@ -21,6 +22,7 @@ function App() {
   const [xPlaying, setXPlaying] = useState(true);
   const [scores, setScores] = useState({ xScore: 0, oScore: 0 });
   const [gameOver, setGameOver] = useState(false);
+  const [winnerFound, setWinnerFound] = useState(false);
 
   const handleBoxClick = (boxIndex) => {
     const updatedBoard = board.map((value, index) => {
@@ -35,10 +37,10 @@ function App() {
     if (winner) {
       if (winner === "X") {
         setScores({ ...scores, xScore: scores.xScore + 1 });
-        alert("X is the winner!");
+        setWinnerFound(true);
       } else {
         setScores({ ...scores, oScore: scores.oScore + 1 });
-        alert("O is the winner!");
+        setWinnerFound(true);
       }
     }
 
@@ -59,6 +61,7 @@ function App() {
 
   const resetBoard = () => {
     setGameOver(false);
+    setWinnerFound(false);
     setBoard(Array(9).fill(null));
   };
 
@@ -67,6 +70,7 @@ function App() {
       <ScoreBoard scores={scores} xPlaying={xPlaying} />
       <Board board={board} onClick={gameOver ? resetBoard : handleBoxClick} />
       <ResetButton resetBoard={resetBoard} />
+      {winnerFound && <WinnerFoundText winner={xPlaying ? "O" : "X"} />}
     </div>
   );
 }
