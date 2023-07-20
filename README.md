@@ -6,7 +6,7 @@ A simplistic yet entertaining game of TicTacToe, made with React.
 
 ## Demo
 
-[Find the Deployed Site Here](https://microphone-model.onrender.com/)
+[Find the Deployed Site Here](https://tictactoe-jylu.onrender.com/)
 ## Getting Started
 
 ### Prerequisites
