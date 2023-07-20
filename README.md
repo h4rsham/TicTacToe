@@ -42,7 +42,7 @@ You may also see any lint errors in the console.
 
 ## Future Improvements
 
-- Make the website responsiveness so that it can be used on devices other than a desktop
+- Improve the website responsiveness so that it can be used on devices other than a desktop
 
 - Changing the generic X's and O's to something more creative like Blue/Red pills
 
